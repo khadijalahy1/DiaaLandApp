@@ -1,47 +1,69 @@
+import "react-native-gesture-handler";
 import * as React from "react";
-import { NavigationContainer, DrawerActions } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import Feed from "../screens/feed";
-import { Icon, Image, TouchableOpacity,Text } from "react-native";
-import { styles as mystyles } from '../assets/styles'
+import { NavigationContainer } from "@react-navigation/native";
 
+import { navigationRef } from "./RootNavigation";
 
+import { createStore } from "redux";
+import favorisReducer from "../utils/reducer";
+import Description from "../screens/Description";
+import { createStackNavigator } from "@react-navigation/stack";
+import DrawerNavigation from "./drawerNavigation";
+import Apply from "../screens/Apply";
+import InternalScreen from '../screens/internalScreen'
 
-const Drawer = createDrawerNavigator();
-const defaultOptions = ({ navigation }) => ({
-  headerTitle:'DiaaLand',
-  headerStyle: {
-    backgroundColor: "#E7ECEF",
-    
-  },
-  headerTintColor: "#274C77",
-  headerShadowVisible:true,
-  drawerPosition:'right',
-  headerLeft: () => (
-    <Text>
-   
-    </Text>
-  ),
-  
-  headerRight: () => (
-    <TouchableOpacity onPress ={ ( ) => navigation.openDrawer()}>
-      <Image source={require("../assets/menu.png")} style={mystyles.drawerIcon} />
-    </TouchableOpacity>
-  )
+//to view later
+const Stack = createStackNavigator();
+const store = createStore(favorisReducer);
 
-});
-export default function Navigation() {
-  
-  
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen
-          name="Offres d'emplois "
-          component={Feed}
-          options={defaultOptions}
-        />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
+export default class Navigation extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    console.log("In Navigation", this.props.offers);
+  }
+
+  render() {
+    return (
+      <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Drawer"
+            component={() => <DrawerNavigation offers={this.props.offers} />}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Description"
+            component={Description}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Apply"
+            component={Apply}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="Internal"
+            component={InternalScreen}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
+
+/*
+                <Drawer.Navigator>
+                  <Drawer.Screen
+                    name="Offers"
+                    component={() => <Feed offers={this.props.offers} />}
+                    options={defaultOptions}
+                  />
+                  <Drawer.Screen
+                    name="Saved jobs"
+                    component={Favoris}
+                    options={defaultOptions}
+                  />
+                </Drawer.Navigator>;
+              }*/

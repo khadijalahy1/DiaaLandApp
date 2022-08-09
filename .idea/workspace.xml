@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8a39d866-7662-41f1-a8c4-8ad07e1ba1bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/forbidden (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/forbidden (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/forbidden.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/forbidden.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/heart (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/heart (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/heart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/location-pin (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/location-pin.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/location-pin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/loupe.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/loupe.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/offerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/offerContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/searchTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/searchTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/feed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/intro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2CwWKyKN78zuR5G64UYwy8JShBH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a39d866-7662-41f1-a8c4-8ad07e1ba1bb" name="Default Changelist" comment="" />
+      <created>1659714069436</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659714069436</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="104" y="106" width="466" height="228" key="AVDManager" timestamp="1660060410392">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="104" y="106" width="466" height="228" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1660060410392" />
+  </component>
+</project>

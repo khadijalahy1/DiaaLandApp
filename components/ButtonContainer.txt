@@ -1,0 +1,4 @@
+  <View style={mystyles.ButtonsContainer}>
+              <CustomButton title="Precedent" onPress={this.goPrevious} />
+              <CustomButton title="Suivant" onPress={this.goNext} />
+            </View>
