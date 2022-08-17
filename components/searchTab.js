@@ -17,12 +17,12 @@ export default class SearchTab extends React.PureComponent {
 
     return (
         <View style={mystyles.searchBarContainer}>
-          <TouchableOpacity style={mystyles.barIcon}  onPress={this.props.parentReference(this.state.value)}>
+          <TouchableOpacity style={mystyles.barIcon}  >
           <Image  style={mystyles.barIcon} source={require('../assets/loupe.png')}/>
           </TouchableOpacity>
           <TextInput style={mystyles.searchBarText} placeholder=" titre de l'emploi ou nom d'entreprise ou mot clés"
-          onSubmitEditing={(value) => this.props.parentReference(value)}
-          onChangeText={(value)=>this.setState({value:value})}
+         
+          onChangeText={(value) => this.props.parentReference(value)}
           />
           
             

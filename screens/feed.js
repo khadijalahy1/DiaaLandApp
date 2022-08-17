@@ -47,6 +47,19 @@ class Feed extends React.PureComponent {
       }
     );
   }
+
+  // save the job
+
+
+  //delete the job
+  onDelete=(id)=>{
+    this.setState({
+      offers:this.state.offers.filter(elt => elt.id !=id)
+    
+    })
+  }
+
+
   //get All locations
   getAllLocations = () => {
     var locations = [];
@@ -93,7 +106,7 @@ class Feed extends React.PureComponent {
     )
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log(responseJson);
+        console.log('search');
         this.setState({
           offers: responseJson.results,
         });
@@ -103,13 +116,12 @@ class Feed extends React.PureComponent {
   //filter methods
 
   onSelect = (picked) => {
+    console.log("entered select");
     return fetch(
-      "https://api.manatal.com/open/v3/career-page/diaaland/jobs/?city__icontains=" +
-        picked
+      "https://api.manatal.com/open/v3/career-page/diaaland/jobs/?city__icontains=casa"
     )
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log(responseJson);
         this.setState({
           offers: responseJson.results,
           filterVisible: false,
@@ -132,6 +144,7 @@ class Feed extends React.PureComponent {
           title={element.position_name}
           location={element.location_display}
           onPress={()=>RootNavigation.navigate('Description',{ title:element.position_name,location:element.location_display,description:element.description,applyCode:element.hash })}
+          onDelete={()=>this.onDelete(element.id)}
         />
       );
     });
@@ -162,9 +175,12 @@ class Feed extends React.PureComponent {
             <View style={mystyles.offersMainTicket}>{this.list()}</View>
           </View>
 
-          <Footer />
+          
+
+       
          
         </ScrollView>
+        <Footer />
         
         <ModalFilterPicker
           visible={this.state.filterVisible}
@@ -192,7 +208,10 @@ class Feed extends React.PureComponent {
             marginLeft: "20%",
           }}
         />
+           
         
+      
+      
       </SafeAreaView>
     );
   }

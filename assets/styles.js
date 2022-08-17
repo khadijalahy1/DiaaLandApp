@@ -17,8 +17,6 @@ IntroText:{
     fontSize: RFPercentage(5),
     fontWeight: 'bold',
     textAlign:'center',
-    textShadowOffset: { width: -1, height: 1 },
-    textShadowRadius: 10,
     marginBottom:'10%'
 },
 introCopyRight:{
@@ -48,7 +46,9 @@ footerContainer:{
     paddingTop:'5%',
     
     borderColor:'#E7ECEF',
-    borderTopWidth:2
+    borderTopWidth:2,
+    width:'100%'
+    
 
    
     
@@ -62,6 +62,7 @@ footerContainer1:{
     
     height:80,
     paddingTop:'5%',
+   
     
     borderColor:'white',
     borderTopWidth:2
@@ -398,7 +399,44 @@ WebView:{
     width:'80%',
     height:'30%',
     backgroundColor:'pink'
+},
+
+//About Us
+
+
+aboutMain:{
+    flex:1,
+    backgroundColor:'white'
+
+
+},
+aboutImage:{
+    width:'80%',
+    marginTop:'10%',
+    marginLeft:'10%',
+    marginBottom:'10%',
+    height:200
+},
+aboutTitle:{
+    color:'#274C77',
+    fontSize:RFPercentage(2),
+    textDecorationColor :'#274C77',
+    textDecorationLine:'underline',
+    fontWeight:'bold',
+    marginBottom:'2%'
+
+},
+aboutText:{
+    fontSize:RFPercentage(2)
+},
+aboutDiv:{
+    width:'80%',
+    marginLeft:'10%',
+    marginBottom:'5%'
+
 }
+
+
 
 
 

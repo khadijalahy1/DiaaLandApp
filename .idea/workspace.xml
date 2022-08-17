@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a39d866-7662-41f1-a8c4-8ad07e1ba1bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/forbidden (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/forbidden (1).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/forbidden.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/forbidden.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/heart (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/heart (1).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/heart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/location-pin (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/location-pin.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/location-pin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/loupe.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/loupe.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/5b6fa0e1-91cb-4df9-bdd6-ea2b689ea1fb_82943775_110437390504383_1566273301817327616_o.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/offerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/offerContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/searchTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/searchTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/drawerNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/drawerNavigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/feed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/intro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +42,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="104" y="106" width="466" height="228" key="AVDManager" timestamp="1660060410392">
+    <state x="104" y="106" width="466" height="228" key="AVDManager" timestamp="1660757454491">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="104" y="106" width="466" height="228" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1660060410392" />
+    <state x="104" y="106" width="466" height="228" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1660757454491" />
   </component>
 </project>

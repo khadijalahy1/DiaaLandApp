@@ -7,6 +7,8 @@ import Favoris from "../screens/Favoris";
 import { styles as mystyles } from "../assets/styles";
 import ScreenInternal from "../screens/internalScreen";
 import AddOffer from "../screens/addOffer";
+import About from "../screens/aboutUs";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 const Drawer = createDrawerNavigator();
 const defaultOptions = ({ navigation }) => ({
@@ -48,7 +50,28 @@ export default class DrawerNavigation extends React.PureComponent {
 
   render() {
     return (
-      <Drawer.Navigator>
+      <Drawer.Navigator
+
+      screenOptions={{
+        drawerStyle:{
+          backgroundColor:'white',
+          width:'70%'
+        },
+        drawerType:'front',
+        drawerItemStyle:{
+          borderColor:'#8B8C89',
+          borderWidth:1
+
+        },
+        drawerLabelStyle:{
+          color:'#274C77',
+          fontWeight:'bold',
+          fontSize:RFPercentage(2)
+        },
+        drawerActiveBackgroundColor:'#E7ECEF'
+      }}
+  
+      >
         <Drawer.Screen
           name="Offers"
           component={() => <Feed offers={this.props.offers} />}
@@ -63,6 +86,12 @@ export default class DrawerNavigation extends React.PureComponent {
         <Drawer.Screen
           name="Post An Offer"
           component={AddOffer}
+          options={defaultOptions}
+        />
+        
+        <Drawer.Screen
+          name="About Us"
+          component={About}
           options={defaultOptions}
         />
       </Drawer.Navigator>
