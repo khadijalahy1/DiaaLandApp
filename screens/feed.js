@@ -53,7 +53,8 @@ class Feed extends React.PureComponent {
   // save the job button 
 
   save=(id,offer)=>{
-    if (this.props.offers[id]!=undefined){
+    
+    if (this.props.saved[id]!=undefined){
       this.props.deleteOffer(id);
 
     }
@@ -159,7 +160,7 @@ class Feed extends React.PureComponent {
         <OfferContainer
           title={element.position_name}
           location={element.location_display}
-          onPress={()=>RootNavigation.navigate('Description',{ title:element.position_name,location:element.location_display,description:element.description,applyCode:element.hash })}
+          onPress={()=>RootNavigation.navigate('Description',{ title:element.position_name,location:element.location_display,description:element.description,applyCode:element.hash,offer:element })}
           onDelete={()=>this.onDelete(element.id)}
           onSave={()=>this.save(element.id,element)}
         />

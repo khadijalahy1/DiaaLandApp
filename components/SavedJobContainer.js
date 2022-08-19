@@ -20,7 +20,7 @@ export default class SavedJobContainer extends React.PureComponent {
 
             </View>
             <View style={mystyles.favorisTicketContainer2}>
-                   <TouchableOpacity style={mystyles.closebtnContainer}>
+                   <TouchableOpacity style={mystyles.closebtnContainer} onPress={this.props.onDelete}>
                    <Image style={mystyles.closebtn} source={require('../assets/cancel.png')}/>
 
                    </TouchableOpacity>
@@ -45,6 +45,7 @@ SavedJobContainer.propTypes={
     title:PropTypes.string,
     location:PropTypes.string,
     onPress:PropTypes.func,
+    onDelete:PropTypes.func
 }
 
 

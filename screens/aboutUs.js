@@ -2,10 +2,6 @@ import React from "react";
 import {
   View,
   Text,
-  StyleSheet,
-  Alert,
-  Button,
-  SafeAreaView,
   ScrollView,
   Image
 } from "react-native";

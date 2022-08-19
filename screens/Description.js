@@ -65,6 +65,7 @@ class Description extends React.PureComponent {
             </TouchableOpacity>
             <TouchableOpacity
               style={mystyles.descriptionBtn}
+              onPress={()=>{this.props.addOffer(this.props.route.params.offer)}}
              
             >
               <Text style={mystyles.descriptionBtnTxt}>Save the job</Text>

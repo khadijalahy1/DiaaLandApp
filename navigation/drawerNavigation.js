@@ -5,7 +5,6 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Feed from "../screens/feed";
 import Favoris from "../screens/Favoris";
 import { styles as mystyles } from "../assets/styles";
-import ScreenInternal from "../screens/internalScreen";
 import AddOffer from "../screens/addOffer";
 import About from "../screens/aboutUs";
 import { RFPercentage } from "react-native-responsive-fontsize";

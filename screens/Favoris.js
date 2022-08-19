@@ -26,6 +26,7 @@ class Favoris extends React.PureComponent {
         title={job.position_name}
         location={job.location_display}
         onPress={()=>RootNavigation.navigate('Description',{ title:job.position_name,location:job.location_display,description:job.description,applyCode:job.hash })}
+        onDelete={()=>{this.props.deleteOffer(job.id)}}
         
         
         />
