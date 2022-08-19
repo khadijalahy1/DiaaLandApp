@@ -19,7 +19,7 @@ export class OfferContainer extends React.PureComponent {
             </View>
             <View style={mystyles.offerContainer2}>
                 <TouchableOpacity onPress={this.props.onSave}>
-                <Image style={mystyles.heart} source={require('../assets/heart.png')}/>
+                <Image style={mystyles.heart} source={require(this.props.heart)}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.props.onDelete}>
                 <Image source={require('../assets/forbidden.png')}/>
@@ -34,5 +34,6 @@ OfferContainer.propTypes={
     location:PropTypes.string,
     onPress:PropTypes.func,
     onSave:PropTypes.func,
-    onDelete:PropTypes.func
+    onDelete:PropTypes.func,
+    heart:PropTypes.string
 }

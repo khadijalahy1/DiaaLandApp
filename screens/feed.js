@@ -6,12 +6,10 @@ import { OfferContainer } from "../components/offerContainer";
 import SearchTab from "../components/searchTab";
 import FilterTab from "../components/filterTab";
 import ModalFilterPicker from "react-native-modal-filter-picker";
-import * as RootNavigation from '../navigation/RootNavigation';
+import * as RootNavigation from "../navigation/RootNavigation";
 // add redux
 import { connect } from "react-redux";
-import {addOffer,deleteOffer} from '../features/reducer';
-
-
+import { addOffer, deleteOffer } from "../features/reducer";
 
 /*
 
@@ -24,11 +22,9 @@ import {addOffer,deleteOffer} from '../features/reducer';
 
 */
 
-
 class Feed extends React.PureComponent {
   constructor(props) {
     super(props);
-    
 
     this.state = {
       offers: [],
@@ -50,32 +46,22 @@ class Feed extends React.PureComponent {
     );
   }
 
-  // save the job button 
+  // save the job button
 
-  save=(id,offer)=>{
-    
-    if (this.props.saved[id]!=undefined){
+  save = (id, offer) => {
+    if (this.props.saved[id] != undefined) {
       this.props.deleteOffer(id);
-
-    }
-    else{
+    } else {
       this.props.addOffer(offer);
-
     }
-   
-  }
-
-  
-
+  };
 
   //delete the job
-  onDelete=(id)=>{
+  onDelete = (id) => {
     this.setState({
-      offers:this.state.offers.filter(elt => elt.id !=id)
-    
-    })
-  }
-
+      offers: this.state.offers.filter((elt) => elt.id != id),
+    });
+  };
 
   //get All locations
   getAllLocations = () => {
@@ -115,7 +101,6 @@ class Feed extends React.PureComponent {
       });
   };
 
- 
   search = (text) => {
     return fetch(
       "https://api.manatal.com/open/v3/career-page/diaaland/jobs/?page_size=1000&search=" +
@@ -123,7 +108,7 @@ class Feed extends React.PureComponent {
     )
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log('search');
+        console.log("search");
         this.setState({
           offers: responseJson.results,
         });
@@ -152,39 +137,53 @@ class Feed extends React.PureComponent {
     });
   };
 
+  //list of all offers
 
- 
   list = () => {
     return this.state.offers.map((element) => {
+      var image;
+      if (this.props.saved[element.id]==undefined){
+        image='../assets/heart.png';
+      }
+      else{
+        image='../assets/heartb.png';
+
+      }
+
       return (
         <OfferContainer
           title={element.position_name}
           location={element.location_display}
-          onPress={()=>RootNavigation.navigate('Description',{ title:element.position_name,location:element.location_display,description:element.description,applyCode:element.hash,offer:element })}
-          onDelete={()=>this.onDelete(element.id)}
-          onSave={()=>this.save(element.id,element)}
+          onPress={() =>
+            RootNavigation.navigate("Description", {
+              title: element.position_name,
+              location: element.location_display,
+              description: element.description,
+              applyCode: element.hash,
+              offer: element,
+              heart:image
+            })
+          }
+          onDelete={() => this.onDelete(element.id)}
+          onSave={() => this.save(element.id, element)}
+
         />
       );
     });
   };
-  
 
-  //
-
-  //list of all offers
   
 
   render() {
-
     return (
       <SafeAreaView style={mystyles.feedContainer}>
         <ScrollView style={mystyles.scroll}>
           <View style={mystyles.searchTabContainer}>
-          
-
-              <SearchTab onRef={ref => (this.parentReference = ref)} parentReference = {this.search.bind(this)}/>
+            <SearchTab
+              onRef={(ref) => (this.parentReference = ref)}
+              parentReference={this.search.bind(this)}
+            />
             <FilterTab onPress={this.onCancel} />
-             
           </View>
           <View style={mystyles.offersContainer}>
             <View style={mystyles.offersLabel}>
@@ -192,14 +191,9 @@ class Feed extends React.PureComponent {
             </View>
             <View style={mystyles.offersMainTicket}>{this.list()}</View>
           </View>
-
-          
-
-       
-         
         </ScrollView>
         <Footer />
-        
+
         <ModalFilterPicker
           visible={this.state.filterVisible}
           onSelect={this.onSelect}
@@ -226,10 +220,6 @@ class Feed extends React.PureComponent {
             marginLeft: "20%",
           }}
         />
-           
-        
-      
-      
       </SafeAreaView>
     );
   }
@@ -241,7 +231,6 @@ const mapStateToProps = (state) => ({
   saved: state.saved.value,
 });
 
-const mapDispatchToProps = {addOffer,deleteOffer };
+const mapDispatchToProps = { addOffer, deleteOffer };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);
-
