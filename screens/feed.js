@@ -5,10 +5,12 @@ import Footer from "../components/footer";
 import { OfferContainer } from "../components/offerContainer";
 import SearchTab from "../components/searchTab";
 import FilterTab from "../components/filterTab";
-import CustomButton from "../components/CustomButton";
 import ModalFilterPicker from "react-native-modal-filter-picker";
-import { withNavigation } from '@react-navigation/native';
-import * as RootNavigation from '../navigation/RootNavigation'
+import * as RootNavigation from '../navigation/RootNavigation';
+// add redux
+import { connect } from "react-redux";
+import {addOffer,deleteOffer} from '../features/reducer';
+
 
 
 /*
@@ -216,4 +218,14 @@ class Feed extends React.PureComponent {
     );
   }
 }
-export default Feed
+
+//redux configuration
+
+const mapStateToProps = (state) => ({
+  saved: state.saved.value,
+});
+
+const mapDispatchToProps = {addOffer,deleteOffer };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+

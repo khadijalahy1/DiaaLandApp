@@ -2,10 +2,6 @@ import React from "react";
 import {
   View,
   Text,
-  StyleSheet,
-  ActivityIndicator,
-  Alert,
-  Button,
   TouchableOpacity,
   Image,
 } from "react-native";
@@ -13,10 +9,12 @@ import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles as mystyles } from "../assets/styles";
 import FooterV1 from "../components/footerV1";
-import WebView from "react-native-webview";
-import { useWindowDimensions } from "react-native";
 import RenderHtml from "react-native-render-html";
-import * as RootNavigation from '../navigation/RootNavigation'
+import * as RootNavigation from '../navigation/RootNavigation';
+// add redux
+import { connect } from "react-redux";
+import {addOffer,deleteOffer} from '../features/reducer';
+
 
 
 //styles of the webview
@@ -86,4 +84,12 @@ class Description extends React.PureComponent {
   }
 }
 
-export default Description;
+//redux configuration
+
+const mapStateToProps = (state) => ({
+  saved: state.saved.value,
+});
+
+const mapDispatchToProps = {addOffer,deleteOffer };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Description);
