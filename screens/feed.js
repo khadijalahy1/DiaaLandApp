@@ -50,7 +50,21 @@ class Feed extends React.PureComponent {
     );
   }
 
-  // save the job
+  // save the job button 
+
+  save=(id,offer)=>{
+    if (this.props.offers[id]!=undefined){
+      this.props.deleteOffer(id);
+
+    }
+    else{
+      this.props.addOffer(offer);
+
+    }
+   
+  }
+
+  
 
 
   //delete the job
@@ -147,6 +161,7 @@ class Feed extends React.PureComponent {
           location={element.location_display}
           onPress={()=>RootNavigation.navigate('Description',{ title:element.position_name,location:element.location_display,description:element.description,applyCode:element.hash })}
           onDelete={()=>this.onDelete(element.id)}
+          onSave={()=>this.save(element.id,element)}
         />
       );
     });

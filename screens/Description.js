@@ -14,9 +14,6 @@ import * as RootNavigation from '../navigation/RootNavigation';
 // add redux
 import { connect } from "react-redux";
 import {addOffer,deleteOffer} from '../features/reducer';
-
-
-
 //styles of the webview
 
 const tagsStyles = {
@@ -27,8 +24,6 @@ const tagsStyles = {
 
   }
 }
-
-
 
 class Description extends React.PureComponent {
 
