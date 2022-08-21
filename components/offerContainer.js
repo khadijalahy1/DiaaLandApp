@@ -3,10 +3,23 @@ import { View, Text,  StyleSheet, Alert, Button,Image,TouchableOpacity } from 'r
 import { styles as mystyles } from '../assets/styles'
 import PropTypes from 'prop-types';
 
-
+var blue='../assets/heartb.png';
+var white='../assets/heart.png';
 export class OfferContainer extends React.PureComponent {
 
+renderImage= () => {
+        console.log('entered render image');
+        console.log(this.props.heartb);
+        if (this.props.heartb==true) {
+          return <Image style={mystyles.heart} source={require(blue)}/>;
+        } else {
+          return <Image style={mystyles.heart} source={require(white)}/>;
+        }
+      }
+
+
   render() {
+  
     return (
         <TouchableOpacity  style={mystyles.offerContainer} onPress={this.props.onPress}>
             <View style={mystyles.offerContainer1}>
@@ -19,7 +32,11 @@ export class OfferContainer extends React.PureComponent {
             </View>
             <View style={mystyles.offerContainer2}>
                 <TouchableOpacity onPress={this.props.onSave}>
-                <Image style={mystyles.heart} source={require(this.props.heart)}/>
+                    
+                {this.renderImage()}
+                    
+
+                
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.props.onDelete}>
                 <Image source={require('../assets/forbidden.png')}/>
@@ -35,5 +52,5 @@ OfferContainer.propTypes={
     onPress:PropTypes.func,
     onSave:PropTypes.func,
     onDelete:PropTypes.func,
-    heart:PropTypes.string
+    heartb:PropTypes.bool
 }

@@ -143,10 +143,11 @@ class Feed extends React.PureComponent {
     return this.state.offers.map((element) => {
       var image;
       if (this.props.saved[element.id]==undefined){
-        image='../assets/heart.png';
+        image=false;
       }
       else{
-        image='../assets/heartb.png';
+        image=true;
+        
 
       }
 
@@ -161,11 +162,12 @@ class Feed extends React.PureComponent {
               description: element.description,
               applyCode: element.hash,
               offer: element,
-              heart:image
+              
             })
           }
           onDelete={() => this.onDelete(element.id)}
           onSave={() => this.save(element.id, element)}
+          heartb={image}
 
         />
       );
