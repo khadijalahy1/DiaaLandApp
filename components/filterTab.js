@@ -6,17 +6,27 @@ import PropTypes from 'prop-types';
 
 export default class FilterTab extends React.PureComponent {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      value:''
+    };
+  }
+
+
   render() {
     return (
         <View style={mystyles.FilterBarContainer}>
-            <TouchableOpacity style={mystyles.filterIcon} onPress={this.props.onPress}>
+            <TouchableOpacity style={mystyles.filterIcon} >
             <Image  style={mystyles.filterIcon} source={require('../assets/location-pin.png')}/>
             </TouchableOpacity>
-            <TextInput style={mystyles.searchBarText} placeholder="Ville,Rue,Pays"/>
+            <TextInput style={mystyles.searchBarText} placeholder="Ville,Rue,Pays" onChangeText={(value) => this.props.parentReference(value)}/>
         </View>      
     )
   }
 }
 FilterTab.propTypes={
-  onPress:PropTypes.func
+  parentReference:PropTypes.func
 }
+
+

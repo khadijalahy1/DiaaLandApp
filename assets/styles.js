@@ -203,7 +203,7 @@ barIcon:{
 },
 filterIcon:{
     marginTop:'2%',
-    marginLeft:'9%',
+    marginLeft:'9%'
    
     
 }
@@ -225,7 +225,8 @@ FilterBarContainer:{
     backgroundColor:'white'
 },
 FilterBarText:{
-    color:'#8B8C89'
+    color:'#8B8C89',
+    flex:8
 
 },
 
@@ -262,6 +263,22 @@ favorisContainer:{
 
 },
 
+savedNoneContainer:{
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center',
+    height:400
+
+
+},
+
+savedNoneText:{
+    color:'gray',
+    fontSize:RFPercentage(2.5),
+    textAlign:'center'
+
+},
+
 //favorisTicket
 
 favorisTicketContainer:{
@@ -277,7 +294,7 @@ favorisTicketContainer1:{
     width:'80%',
     marginLeft:'5%',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'flex-start'
 
    
 
@@ -295,11 +312,13 @@ favorisLocation:{
     marginBottom:'2%'
 },
 favorisApply:{
-    width:'45%',
-    height:'15%',
+    width:'60%',
+    height:'20%',
     backgroundColor:'#274C77',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+    marginTop:'5%',
+    borderRadius:10
 },
 favorisApplyText:{
     color:'white'
@@ -316,8 +335,8 @@ closebtnContainer:{
 }
 ,
 closebtn:{
-  height:'100%',
-  paddingLeft:'10%'
+  height:'80%',
+  paddingLeft:'8%'
 
 },
 //Description

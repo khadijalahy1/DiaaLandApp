@@ -36,14 +36,23 @@ class Feed extends React.PureComponent {
   }
 
   componentDidMount() {
+  
     this.setState(
       {
         offers: this.props.offers,
       },
       () => {
         this.getAllLocations();
+        
       }
     );
+
+    
+
+  }
+
+  componentWillUnmount() {
+    this.search();
   }
 
   // save the job button
@@ -118,9 +127,9 @@ class Feed extends React.PureComponent {
   //filter methods
 
   onSelect = (picked) => {
-    console.log("entered select");
+    console.log("entered select"+picked);
     return fetch(
-      "https://api.manatal.com/open/v3/career-page/diaaland/jobs/?city__icontains=casa"
+      "https://api.manatal.com/open/v3/career-page/diaaland/jobs/?city__icontains="+picked
     )
       .then((response) => response.json())
       .then((responseJson) => {
@@ -140,6 +149,17 @@ class Feed extends React.PureComponent {
   //list of all offers
 
   list = () => {
+    if(this.state.offers.length==0){
+      return(
+        <View style={mystyles.savedNoneContainer}>
+        <Text style={mystyles.savedNoneText}>
+          Nothing matches your search
+        </Text>
+      </View>
+      )
+      
+
+    }
     return this.state.offers.map((element) => {
       var image;
       if (this.props.saved[element.id]==undefined){
@@ -173,9 +193,6 @@ class Feed extends React.PureComponent {
       );
     });
   };
-
-  
-
   render() {
     return (
       <SafeAreaView style={mystyles.feedContainer}>
@@ -185,7 +202,9 @@ class Feed extends React.PureComponent {
               onRef={(ref) => (this.parentReference = ref)}
               parentReference={this.search.bind(this)}
             />
-            <FilterTab onPress={this.onCancel} />
+            <FilterTab onRef={(ref) => (this.parentReference = ref)}
+              onPress={()=>this.setState({filterVisible:true})}
+              parentReference={this.onSelect.bind(this)}  />
           </View>
           <View style={mystyles.offersContainer}>
             <View style={mystyles.offersLabel}>

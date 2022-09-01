@@ -21,7 +21,6 @@ export default class SearchTab extends React.PureComponent {
           <Image  style={mystyles.barIcon} source={require('../assets/loupe.png')}/>
           </TouchableOpacity>
           <TextInput style={mystyles.searchBarText} placeholder=" titre de l'emploi ou nom d'entreprise ou mot clés"
-         
           onChangeText={(value) => this.props.parentReference(value)}
           />
           
